@@ -28,6 +28,12 @@ public class Livre {
         return typeLivre_l;
     }
 
+    public Livre(int id_l, String titre_l) {
+        this.id_l = id_l;
+        this.titre_l = titre_l;
+    }
+    
+
     public void setTypeLivre_l(TypeLivre typeLivre_l) {
         this.typeLivre_l = typeLivre_l;
     }

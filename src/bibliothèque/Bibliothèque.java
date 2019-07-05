@@ -5,17 +5,23 @@
  */
 package bibliothèque;
 
+import ControleurBibliotheque.ControleurLivre;
 import modele.Auteur;
 import modele.AuteurDao;
 import modele.Connexion;
 import modele.Edition;
 import modele.EditionDao;
+import modele.Exemplaire;
+import modele.ExemplaireDao;
 import modele.Inscrit;
 import modele.InscritDao;
+import modele.Livre;
+import modele.LivreDao;
 import modele.Pays;
 import modele.PaysDao;
 import modele.TypeLivre;
 import modele.TypeLivreDao;
+import vue.LivreVue;
 
 /**
  *
@@ -227,11 +233,60 @@ public class Bibliothèque {
     
     //pour supprimer un auteur
     
-    Auteur auteur = new Auteur(3,"Verne","Jules","02/08/25",new Pays(0,"France"));
+   // Auteur auteur = new Auteur(3,"Verne","Jules","02/08/25",new Pays(0,"France"));
     
-    AuteurDao auteurDao = new AuteurDao();
+    //AuteurDao auteurDao = new AuteurDao();
     
-    auteurDao.deleteAuteur(auteur);
+    //auteurDao.deleteAuteur(auteur);
+    
+    //-----------------------------------------------------------------
+    //Livre
+    //--------------------------------------------------------------------
+    // pour ajouter un livre
+    
+    //Livre livre = new Livre (1,"le monde","2010","tres bien",new TypeLivre(1));
+  // LivreDao livreDao = new LivreDao();
+    
+    //livreDao.addLivre(livre);
+    
+    //-------------------------------------------------------------------
+    //pour modifier un livre
+    
+    //Livre livre = new Livre(0,"La terre","2010","tres bien",new TypeLivre(1));
+    //LivreDao livreDao = new LivreDao();
+    
+    //livreDao.updateLivre(livre);
+    
+    //-------------------------------------------------------------------------
+    
+    //pour supprimer un livre
+    
+    //Livre livre = new Livre(0,"La terre","2010","tres bien",new TypeLivre(1));
+    //LivreDao livreDao = new LivreDao();
+    
+    //livreDao.deleteLivre(livre);
+    
+     
+    //--------------------------------------------------------------------
+    //Exemplaire
+    //----------------------------------------------------------------------
+    
+    
+    // pour ajouter un exemplaire
+    
+   //Exemplaire exemplaire = new Exemplaire (0,new Edition(0),new Livre(0));
+   
+   //ExemplaireDao exemplaireDao = new ExemplaireDao();
+   
+   //exemplaireDao.addExemplaire(exemplaire);
+   
+   LivreVue lVue = new LivreVue();
+   ControleurLivre controleurLivre = new ControleurLivre();
+   
+   
+   
+   
+   
     }
     
     

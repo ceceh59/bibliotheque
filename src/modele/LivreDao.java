@@ -62,9 +62,9 @@ public class LivreDao implements LivreInterface{
     livre.setResume_l(objLivre.get("resume_l").toString());
    
     /*Creation d'un document pour recupere le type dans le document livre*/
-    DBObject objTypeLivre =(DBObject) objLivre.get("_id");
+    DBObject objTypeLivre =(DBObject) objLivre.get("typeLivre");
     
-    /*maj du pays dans l'objet livre*/
+    /*maj du type livre dans l'objet livre*/
     livre.setTypeLivre_l(new TypeLivre((int) objTypeLivre.get("_id_t")));
     
     
@@ -102,10 +102,10 @@ public class LivreDao implements LivreInterface{
        //création d'un document
        BasicDBObject docLivre = new BasicDBObject();
        docLivre.append("_id",livre.getId_l());
-       docLivre.append("titre_l",livre.getId_l()); 
-       docLivre.append("annee_l",livre.getId_l());
-       docLivre.append("resume_l",livre.getId_l());
-       docLivre.append("_id",new BasicDBObject("_id",livre.getId_l()));
+       docLivre.append("titre_l",livre.getTitre_l()); 
+       docLivre.append("annee_l",livre.getAnnee_l());
+       docLivre.append("resume_l",livre.getResume_l());
+       docLivre.append("typeLivre",new BasicDBObject("_id",livre.getTypeLivre_l().getId_t()));
       
        //ajout du document dans la collection inscrit
        this.bibliothequeLivre.insert(docLivre);
@@ -135,7 +135,7 @@ public class LivreDao implements LivreInterface{
         docLivreNew.append("titre_l", livre.getTitre_l());
         docLivreNew.append("annee_l", livre.getAnnee_l());
         docLivreNew.append("resume_l", livre.getResume_l());
-        docLivreNew.append("_id",new BasicDBObject("_id",livre.getId_l()));
+        docLivreNew.append("typeLivre",new BasicDBObject("_id",livre.getTypeLivre_l().getId_t()));
         
         this.bibliothequeLivre.update(docLivreOld, docLivreNew);
         
